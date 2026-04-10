@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK Professional Hair Salon Sdn. Bhd.</title>
+  <style>
+    :root{
+      --bg:#f7f4ef;
+      --card:#ffffff;
+      --text:#1e1e1e;
+      --muted:#666;
+      --line:#e8e0d6;
+      --accent:#9b7b4f;
+      --accent-dark:#6f5533;
+      --soft:#efe7db;
+      --green:#25D366;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter: blur(10px);
+      background:rgba(247,244,239,.88);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;gap:20px;
+    }
+    .brand{
+      font-weight:800;font-size:18px;letter-spacing:.2px;
+    }
+    .brand small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+    .nav-links{
+      display:flex;gap:18px;flex-wrap:wrap;color:#333;font-size:14px
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;border:1px solid var(--accent);
+      background:var(--accent);color:white;font-weight:700;transition:.2s ease;
+    }
+    .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+    .btn-outline{
+      background:transparent;color:var(--accent);border:1px solid var(--accent)
+    }
+    .hero{
+      padding:72px 0 44px;
+      background:
+        radial-gradient(circle at top right, rgba(155,123,79,.12), transparent 32%),
+        linear-gradient(180deg,#fbfaf7 0%, #f7f4ef 100%);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;padding:7px 12px;border-radius:999px;
+      background:var(--soft);color:var(--accent-dark);font-size:13px;font-weight:700;
+      margin-bottom:16px;
+    }
+    h1{
+      font-size:clamp(34px,5vw,62px);line-height:1.05;margin:0 0 14px;font-weight:900;
+    }
+    .hero p{
+      font-size:17px;color:#444;max-width:760px;margin:0 0 24px;
+    }
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{
+      background:var(--card);border:1px solid var(--line);border-radius:24px;
+      padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.04);
+    }
+    .stat{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px
+    }
+    .stat div{
+      background:#faf8f4;border:1px solid var(--line);border-radius:18px;padding:16px
+    }
+    .stat strong{display:block;font-size:24px}
+    section{padding:34px 0}
+    .section-title{font-size:30px;margin:0 0 8px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;
+      box-shadow:0 8px 24px rgba(0,0,0,.03);
+    }
+    .card h3{margin-top:0;margin-bottom:8px}
+    .mission-box{
+      border-left:4px solid var(--accent);padding-left:16px
+    }
+    .features{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+    }
+    .feature{
+      background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px
+    }
+    .feature b{display:block;margin-bottom:8px}
+    .contact-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px
+    }
+    .branch{
+      background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px
+    }
+    .branch h3{margin:0 0 10px}
+    .branch p{margin:8px 0;color:#444}
+    .wa{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--green);color:white;padding:12px 16px;border-radius:999px;font-weight:800
+    }
+    .footer{
+      padding:28px 0 46px;color:var(--muted);font-size:14px
+    }
+    .tag{
+      display:inline-block;background:var(--soft);padding:7px 10px;border-radius:999px;
+      font-size:12px;font-weight:700;margin:6px 6px 0 0;color:var(--accent-dark)
+    }
+    .notice{
+      margin-top:14px;padding:14px 16px;background:#fff9ec;border:1px solid #f0dfb2;
+      border-radius:16px;color:#6e5a26;font-size:14px
+    }
+    @media (max-width:900px){
+      .hero-grid,.grid-2,.features,.contact-grid{grid-template-columns:1fr}
+      .nav{align-items:flex-start;flex-direction:column}
+      .nav-links{gap:12px}
+      .hero{padding-top:46px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        SK Professional Hair Salon
+        <small>Professional • Affordable • Pressure-Free</small>
+      </div>
+      <div class="nav-links">
+        <a href="#about">品牌介紹</a>
+        <a href="#mission">品牌理念</a>
+        <a href="#branches">分店資訊</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Since 2018 · Johor Bahru</div>
+        <h1>专业，<br>不一定高价。</h1>
+        <p>
+          SK Professional Hair Salon Sdn. Bhd. 自2018年起，坚持以专业技术、真诚服务与亲民价格，
+          为大众顾客提供实在、安心、零强推的美发体验。
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="https://wa.me/601158998389" target="_blank">WhatsApp HQ</a>
+          <a class="btn btn-outline" href="https://wa.me/601159589272" target="_blank">WhatsApp Austin Crest</a>
+        </div>
+        <div style="margin-top:18px">
+          <span class="tag">高品質</span>
+          <span class="tag">低價格</span>
+          <span class="tag">零推銷</span>
+          <span class="tag">服務大眾</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="margin-top:0">品牌重點</h3>
+        <p style="margin-top:0;color:#444">
+          我们相信，美丽不该昂贵，专业不应遥不可及。<br>
+          我们拒绝强制推销，重视每位顾客真正需要的服务。
+        </p>
+        <div class="stat">
+          <div>
+            <strong>2018</strong>
+            <span>品牌成立</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>JB 门店据点</span>
+          </div>
+          <div>
+            <strong>0</strong>
+            <span>强迫推销</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>重视回头客信任</span>
+          </div>
+        </div>
+        <div class="notice">
+          Demo 版本说明：这是免费网页示范版，不含预约系统与后台，适合先展示品牌、服务与联络方式。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">品牌介紹 | About Us</h2>
+      <p class="section-sub">中英雙語簡介，可直接作為首頁品牌文案使用。</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>中文</h3>
+          <p>
+            自2018年起，SK Professional Hair Salon Sdn. Bhd. 一直秉持“專業服務大眾”的理念，
+            為中低收入群體提供既實惠又高品質的美髮服務。我們相信，美麗不該昂貴，專業不應遙不可及。
+            我們拒絕強制推銷，注重每一位顧客的真實需求，用專業、誠意與耐心，贏得每一次回頭與信任。
+          </p>
+        </div>
+        <div class="card">
+          <h3>English</h3>
+          <p>
+            Since 2018, SK Professional Hair Salon Sdn. Bhd. has been dedicated to serving the community with
+            professional and affordable hair services tailored for working-class and budget-conscious customers.
+            We believe beauty should be accessible, and professional service should be honest and pressure-free.
+            We do not upsell. We focus on what truly matters — skill, sincerity, and the trust we earn with every return visit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission">
+    <div class="wrap">
+      <h2 class="section-title">品牌宗旨與願景</h2>
+      <p class="section-sub">這一段適合放在網站首頁中段，建立品牌定位。</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="mission-box">
+            <h3>品牌宗旨 | Mission</h3>
+            <p>
+              我們致力於以專業的技術、真誠的服務與親民的價格，
+              讓每一位顧客都能安心享受物超所值的美髮體驗。
+            </p>
+            <p>
+              We are committed to providing high-quality hair services with professional skills, honest service,
+              and affordable prices — so that everyone can enjoy great value with peace of mind.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="mission-box">
+            <h3>品牌願景 | Vision</h3>
+            <p>
+              成為馬來西亞最受信賴的大眾理髮品牌，
+              讓“高品質、低價格、零推銷”的美髮體驗走進每一條街巷、每一位顧客的生活。
+            </p>
+            <p>
+              To become Malaysia’s most trusted hair salon for the everyday customer — delivering high-quality,
+              affordable, and pressure-free hair services to every community and every individual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">為什麼顧客會選擇你們</h2>
+      <p class="section-sub">這裡是首頁最重要的一段，直接講出你們跟別家的差別。</p>
+      <div class="features">
+        <div class="feature">
+          <b>專業但不高價</b>
+          <div>讓更多大眾顧客，也能享受到真正有水準的美髮服務。</div>
+        </div>
+        <div class="feature">
+          <b>零強迫推銷</b>
+          <div>不亂加項目，不做壓力式銷售，照顧顧客真實需求。</div>
+        </div>
+        <div class="feature">
+          <b>重視信任與回頭率</b>
+          <div>靠技術、誠意、耐心做口碑，不靠話術做生意。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="branches">
+    <div class="wrap">
+      <h2 class="section-title">分店資訊 | Branches</h2>
+      <p class="section-sub">可後续继续加营业时间、地图、服务价格与照片。</p>
+      <div class="contact-grid">
+        <div class="branch">
+          <h3>Skudai HQ</h3>
+          <p><strong>電話 / WhatsApp：</strong>011-5899 8389</p>
+          <p><strong>地址：</strong>No 62A, Jalan Pendekar 13, Taman Ungku Tun Aminah, Skudai, Johor Bahru</p>
+          <p><strong>定位：</strong>總部門店 / HQ</p>
+          <p><a class="wa" href="https://wa.me/601158998389" target="_blank">立即 WhatsApp HQ</a></p>
+        </div>
+        <div class="branch">
+          <h3>Austin Crest 分店</h3>
+          <p><strong>電話 / WhatsApp：</strong>011-5958 9272</p>
+          <p><strong>地址：</strong>No 41-01, Jalan Jaya Putra 7/4, Bandar Jaya Putra, 81100 Johor Bahru, Johor</p>
+          <p><strong>定位：</strong>Austin Crest Branch</p>
+          <p><a class="wa" href="https://wa.me/601159589272" target="_blank">立即 WhatsApp Austin Crest</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="card">
+        <h2 class="section-title" style="margin-top:0">聯絡我們 | Contact</h2>
+        <p class="section-sub" style="margin-bottom:16px">
+          這個 demo 目前是免費靜態網頁版本。之後你可以再加：
+          作品集、價目表、Google Map、Facebook、Instagram、預約表單。
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="tel:01158998389">撥打 HQ</a>
+          <a class="btn btn-outline" href="tel:01159589272">撥打 Austin Crest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap footer">
+    © 2026 SK Professional Hair Salon Sdn. Bhd. · Demo Website<br>
+    Free static webpage sample created for preview.
+  </div>
+</body>
+</html>
